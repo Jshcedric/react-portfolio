@@ -1,1 +1,1 @@
-export default function Hero(){return <section><h1>Hero</h1></section>;}
+export default function Hero(){return <section className="section"><div className="container"><h2 className="section-title">Hero Section</h2></div></section>;}

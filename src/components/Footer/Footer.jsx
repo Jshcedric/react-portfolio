@@ -1,1 +1,1 @@
-export default function Footer(){return <section><h1>Footer</h1></section>;}
+export default function Footer(){return <section className="section"><div className="container"><h2 className="section-title">Footer</h2></div></section>;}

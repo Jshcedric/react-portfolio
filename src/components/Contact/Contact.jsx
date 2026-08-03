@@ -1,1 +1,1 @@
-export default function Contact(){return <section><h1>Contact</h1></section>;}
+export default function Contact(){return <section className="section"><div className="container"><h2 className="section-title">Contact Me</h2></div></section>;}

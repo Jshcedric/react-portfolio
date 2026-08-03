@@ -1,1 +1,1 @@
-export default function Projects(){return <section><h1>Projects</h1></section>;}
+export default function Projects(){return <section className="section"><div className="container"><h2 className="section-title">Projects</h2></div></section>;}

@@ -1,1 +1,1 @@
-export default function About(){return <section><h1>About Me</h1></section>;}
+export default function About(){return <section className="section"><div className="container"><h2 className="section-title">About Me</h2></div></section>;}

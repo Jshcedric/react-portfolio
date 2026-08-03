@@ -1,1 +1,1 @@
-export default function Navbar(){return <section><h1>Navbar</h1></section>;}
+export default function Navbar(){return <section className="section"><div className="container"><h2 className="section-title">Navbar</h2></div></section>;}
