@@ -223,6 +223,7 @@ export default function Contact() {
                     className="contact-form"
                     key="form"
                     onSubmit={handleSubmit}
+                    noValidate
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
