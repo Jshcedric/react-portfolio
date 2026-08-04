@@ -7,10 +7,10 @@
   overflow: hidden;
   background: radial-gradient(
       circle at 15% 20%,
-      rgba(37, 99, 235, 0.06),
+      rgba(168, 85, 247, 0.08),
       transparent 45%
     ),
-    radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.06), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(192, 132, 252, 0.08), transparent 45%),
     var(--background);
 }
 
@@ -155,7 +155,7 @@
 .hero-glow-one {
   width: 320px;
   height: 320px;
-  background: rgba(37, 99, 235, 0.25);
+  background: rgba(168, 85, 247, 0.3);
   top: 5%;
   left: 5%;
 }
@@ -163,7 +163,7 @@
 .hero-glow-two {
   width: 260px;
   height: 260px;
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(192, 132, 252, 0.22);
   bottom: 5%;
   right: 5%;
 }

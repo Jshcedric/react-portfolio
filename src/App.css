@@ -36,9 +36,12 @@
 }
 
 .card {
-  background: #fff;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
   padding: 30px;
 }
 
@@ -47,12 +50,16 @@
   padding: 14px 28px;
   border: none;
   border-radius: 50px;
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
   color: #fff;
+  box-shadow: var(--shadow-glow);
+  transition: filter 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .btn:hover {
-  background: var(--primary-light);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 36px rgba(168, 85, 247, 0.35);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
