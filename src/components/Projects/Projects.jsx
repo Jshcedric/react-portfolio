@@ -4,7 +4,6 @@ import {
   FiGrid,
   FiCheckSquare,
   FiDollarSign,
-  FiGithub,
   FiArrowRight,
   FiX,
 } from "react-icons/fi";
@@ -25,7 +24,6 @@ const PROJECTS = [
     tech: ["Java", "OOP", "Collections"],
     icon: <FiGrid />,
     featured: true,
-    githubLink: "#",
   },
   {
     title: "To-Do List Application",
@@ -41,7 +39,6 @@ const PROJECTS = [
     tech: ["Java", "OOP", "File I/O"],
     icon: <FiCheckSquare />,
     featured: false,
-    githubLink: "#",
   },
   {
     title: "Payroll Computation",
@@ -57,7 +54,6 @@ const PROJECTS = [
     tech: ["Java", "OOP"],
     icon: <FiDollarSign />,
     featured: false,
-    githubLink: "#",
   },
 ];
 
@@ -148,17 +144,6 @@ export default function Projects() {
                   View Details
                   <FiArrowRight />
                 </motion.button>
-                <motion.a
-                  href={project.githubLink}
-                  className="project-btn-secondary"
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
-                  aria-label={`View ${project.title} source code on GitHub`}
-                >
-                  <FiGithub />
-                  GitHub
-                </motion.a>
               </div>
             </motion.article>
           ))}
@@ -218,17 +203,6 @@ export default function Projects() {
                     {tech}
                   </span>
                 ))}
-              </div>
-
-              <div className="project-modal-actions">
-                <a
-                  href={activeProject.githubLink}
-                  className="project-btn-secondary"
-                  aria-label={`View ${activeProject.title} source code on GitHub`}
-                >
-                  <FiGithub />
-                  GitHub
-                </a>
               </div>
             </motion.div>
           </motion.div>
