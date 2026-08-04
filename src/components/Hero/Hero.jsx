@@ -3,7 +3,7 @@ import {
   SiReact,
   SiJavascript,
   SiHtml5,
-  SiCss,
+  SiCss3,
   SiGit,
   SiGithub,
 } from "react-icons/si";
@@ -15,7 +15,7 @@ const TECH_STACK = [
   { label: "React", icon: <SiReact /> },
   { label: "JavaScript", icon: <SiJavascript /> },
   { label: "HTML", icon: <SiHtml5 /> },
-  { label: "CSS", icon: <SiCss /> },
+  { label: "CSS", icon: <SiCss3 /> },
   { label: "Git", icon: <SiGit /> },
   { label: "GitHub", icon: <SiGithub /> },
 ];

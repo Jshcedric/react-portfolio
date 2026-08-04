@@ -1,1 +1,111 @@
-export default function Footer(){return <section className="section"><div className="container"><h2 className="section-title">Footer</h2></div></section>;}
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa";
+import "./Footer.css";
+
+const QUICK_LINKS = [
+  { label: "Home", href: "#hero" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+const SOCIAL_LINKS = [
+  { label: "GitHub", icon: <FaGithub />, href: "https://github.com/yourusername" },
+  { label: "LinkedIn", icon: <FaLinkedin />, href: "https://linkedin.com/in/yourprofile" },
+  { label: "Email", icon: <FaEnvelope />, href: "mailto:example@email.com" },
+  { label: "Facebook", icon: <FaFacebook />, href: "#" },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <motion.footer
+      className="footer"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <div className="container footer-container">
+        <motion.div
+          className="footer-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div className="footer-brand" variants={itemVariants}>
+            <span className="footer-brand-name">Joshua Cedric Cortez</span>
+            <span className="footer-brand-role">Computer Science Student</span>
+            <p className="footer-brand-text">
+              Building modern web experiences with clean code and thoughtful
+              design.
+            </p>
+          </motion.div>
+
+          <motion.nav
+            className="footer-links"
+            variants={itemVariants}
+            aria-label="Footer navigation"
+          >
+            <h3 className="footer-heading">Quick Links</h3>
+            <ul className="footer-links-list">
+              {QUICK_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="footer-link">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        </motion.div>
+
+        <motion.div
+          className="footer-socials"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {SOCIAL_LINKS.map((social) => (
+            <motion.a
+              href={social.href}
+              key={social.label}
+              className="footer-social-icon"
+              aria-label={social.label}
+              variants={itemVariants}
+              whileHover={{ y: -4, scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              target={social.href.startsWith("http") ? "_blank" : undefined}
+              rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            >
+              {social.icon}
+            </motion.a>
+          ))}
+        </motion.div>
+
+        <div className="footer-divider" aria-hidden="true"></div>
+
+        <p className="footer-copyright">
+          © {year} Joshua Cedric Cortez. Built with React and{" "}
+          <span className="footer-heart" aria-label="love">
+            ❤️
+          </span>
+        </p>
+      </div>
+    </motion.footer>
+  );
+}
