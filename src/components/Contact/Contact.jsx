@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMail, FiMapPin, FiGithub, FiArrowRight, FiCheckCircle } from "react-icons/fi";
-import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import "./Contact.css";
 
 const CONTACT_CARDS = [
@@ -25,13 +25,6 @@ const CONTACT_CARDS = [
     value: "Philippines",
     icon: <FiMapPin />,
   },
-];
-
-const SOCIAL_LINKS = [
-  { label: "GitHub", icon: <FaGithub />, href: "#" },
-  { label: "LinkedIn", icon: <FaLinkedin />, href: "#" },
-  { label: "Facebook", icon: <FaFacebook />, href: "#" },
-  { label: "Email", icon: <FaEnvelope />, href: "#" },
 ];
 
 const INITIAL_FORM = { name: "", email: "", subject: "", message: "" };
@@ -348,22 +341,6 @@ export default function Contact() {
                   </motion.form>
                 )}
               </AnimatePresence>
-            </div>
-
-            <div className="contact-socials">
-              {SOCIAL_LINKS.map((social) => (
-                <motion.a
-                  href={social.href}
-                  key={social.label}
-                  className="contact-social-icon"
-                  aria-label={social.label}
-                  whileHover={{ scale: 1.12 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {social.icon}
-                </motion.a>
-              ))}
             </div>
           </motion.div>
         </div>

@@ -62,16 +62,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <motion.a
-          href="#contact"
-          className="navbar-hire-btn"
-          onClick={(event) => handleNavClick(event, "#contact")}
-          whileHover={{ y: -2 }}
-          transition={{ duration: 0.2 }}
-        >
-          Hire Me
-        </motion.a>
-
         <button
           className="navbar-toggle"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -103,15 +93,6 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="#contact"
-                  className="navbar-mobile-hire-btn"
-                  onClick={(event) => handleNavClick(event, "#contact")}
-                >
-                  Hire Me
-                </a>
-              </li>
             </ul>
           </motion.div>
         )}
