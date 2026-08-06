@@ -9,6 +9,7 @@ import {
 } from "react-icons/si";
 import { FiArrowDown } from "react-icons/fi";
 import heroImage from "../../assets/hero.png";
+import { scrollToHash } from "../../utils/scrollTo";
 import "./Hero.css";
 
 const TECH_STACK = [
@@ -25,16 +26,21 @@ const containerVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.12 },
+    transition: { duration: 0.4, ease: "easeOut", staggerChildren: 0.05 },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 export default function Hero() {
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+    scrollToHash(href);
+  };
+
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
@@ -72,6 +78,7 @@ export default function Hero() {
             <motion.a
               href="#projects"
               className="btn hero-btn-primary"
+              onClick={(event) => handleNavClick(event, "#projects")}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
@@ -81,6 +88,7 @@ export default function Hero() {
             <motion.a
               href="#contact"
               className="btn hero-btn-secondary"
+              onClick={(event) => handleNavClick(event, "#contact")}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
@@ -96,7 +104,7 @@ export default function Hero() {
                 className="hero-tech-badge"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.6 + index * 0.08 }}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
                 whileHover={{ y: -3 }}
               >
                 <span className="hero-tech-icon">{tech.icon}</span>
@@ -110,7 +118,7 @@ export default function Hero() {
           className="hero-visual"
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
         >
           <div className="hero-glow hero-glow-one" aria-hidden="true"></div>
           <div className="hero-glow hero-glow-two" aria-hidden="true"></div>
@@ -136,9 +144,10 @@ export default function Hero() {
       <motion.a
         href="#about"
         className="hero-scroll"
+        onClick={(event) => handleNavClick(event, "#about")}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1 }}
+        transition={{ duration: 0.4, delay: 0.6 }}
         aria-label="Scroll to About section"
       >
         <span>Scroll Down</span>

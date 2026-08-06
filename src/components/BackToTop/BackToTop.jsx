@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowUp } from "react-icons/fi";
+import { scrollToTop } from "../../utils/scrollTo";
 import "./BackToTop.css";
 
 const SCROLL_THRESHOLD = 400;
@@ -13,10 +14,6 @@ export default function BackToTop() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <AnimatePresence>

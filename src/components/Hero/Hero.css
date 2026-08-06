@@ -10,7 +10,6 @@
       rgba(168, 85, 247, 0.08),
       transparent 45%
     ),
-    radial-gradient(circle at 85% 80%, rgba(192, 132, 252, 0.08), transparent 45%),
     var(--background);
 }
 

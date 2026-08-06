@@ -60,13 +60,13 @@ const PROJECTS = [
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.05 },
   },
 };
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 export default function Projects() {
@@ -79,7 +79,7 @@ export default function Projects() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="container">
         <h2 className="section-title">Projects</h2>
@@ -123,7 +123,7 @@ export default function Projects() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.6 }}
-                    transition={{ duration: 0.35, delay: index * 0.06 }}
+                    transition={{ duration: 0.35, delay: index * 0.05 }}
                     whileHover={{ scale: 1.08 }}
                   >
                     {tech}

@@ -40,12 +40,12 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.05 } },
 };
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 function validateField(name, value) {
@@ -140,7 +140,7 @@ export default function Contact() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="container">
         <h2 className="section-title">Contact Me</h2>
@@ -155,7 +155,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <h3 className="contact-heading">Let's Build Something Together</h3>
             <p className="contact-text">
@@ -193,7 +193,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
           >
             <div className="card contact-form-card">
               <AnimatePresence mode="wait">
@@ -204,7 +204,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -12 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
                   >
                     <FiCheckCircle className="contact-success-icon" />
                     <p className="contact-success-text">
@@ -227,7 +227,7 @@ export default function Contact() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {submitError && (
                       <p className="contact-form-error-banner" role="alert">

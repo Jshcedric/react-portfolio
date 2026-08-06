@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
+import { scrollToHash } from "../../utils/scrollTo";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -15,23 +16,28 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLinkClick = () => setIsMobileMenuOpen(false);
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+    scrollToHash(href);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <motion.nav
       className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="navbar-container">
         <motion.a
           href="#"
           className="navbar-logo"
+          onClick={(event) => handleNavClick(event, "#")}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
@@ -45,7 +51,11 @@ export default function Navbar() {
         <ul className="navbar-links">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="navbar-link">
+              <a
+                href={link.href}
+                className="navbar-link"
+                onClick={(event) => handleNavClick(event, link.href)}
+              >
                 {link.label}
               </a>
             </li>
@@ -55,6 +65,7 @@ export default function Navbar() {
         <motion.a
           href="#contact"
           className="navbar-hire-btn"
+          onClick={(event) => handleNavClick(event, "#contact")}
           whileHover={{ y: -2 }}
           transition={{ duration: 0.2 }}
         >
@@ -78,7 +89,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             <ul className="navbar-mobile-links">
               {NAV_LINKS.map((link) => (
@@ -86,7 +97,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     className="navbar-mobile-link"
-                    onClick={handleLinkClick}
+                    onClick={(event) => handleNavClick(event, link.href)}
                   >
                     {link.label}
                   </a>
@@ -96,7 +107,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   className="navbar-mobile-hire-btn"
-                  onClick={handleLinkClick}
+                  onClick={(event) => handleNavClick(event, "#contact")}
                 >
                   Hire Me
                 </a>

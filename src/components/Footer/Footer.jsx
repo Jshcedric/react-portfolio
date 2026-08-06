@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa";
+import { scrollToHash } from "../../utils/scrollTo";
 import "./Footer.css";
 
 const QUICK_LINKS = [
@@ -18,16 +19,21 @@ const SOCIAL_LINKS = [
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.05 } },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 export default function Footer() {
   const year = new Date().getFullYear();
+
+  const handleLinkClick = (event, href) => {
+    event.preventDefault();
+    scrollToHash(href);
+  };
 
   return (
     <motion.footer
@@ -35,7 +41,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="container footer-container">
         <motion.div
@@ -63,7 +69,11 @@ export default function Footer() {
             <ul className="footer-links-list">
               {QUICK_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="footer-link">
+                  <a
+                    href={link.href}
+                    className="footer-link"
+                    onClick={(event) => handleLinkClick(event, link.href)}
+                  >
                     {link.label}
                   </a>
                 </li>

@@ -36,7 +36,7 @@ export default function About() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="container">
         <h2 className="section-title">About Me</h2>
@@ -48,7 +48,7 @@ export default function About() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="card about-profile-card">
               <div className="about-profile-image-frame">
@@ -83,7 +83,7 @@ export default function About() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
           >
             <h3 className="about-heading">Who Am I?</h3>
             <p className="about-text">
@@ -112,7 +112,7 @@ export default function About() {
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.6 }}
-                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                   whileHover={{ y: -3 }}
                 >
                   {skill}
