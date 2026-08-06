@@ -8,7 +8,7 @@ import {
   SiGithub,
 } from "react-icons/si";
 import { FiArrowDown } from "react-icons/fi";
-import heroImage from "../../assets/hero.png";
+import heroImage from "../../assets/hero.webp";
 import { scrollToHash } from "../../utils/scrollTo";
 import "./Hero.css";
 

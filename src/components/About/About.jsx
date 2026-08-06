@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiMapPin, FiBookOpen, FiCode } from "react-icons/fi";
-import profileImage from "../../assets/hero.png";
+import profileImage from "../../assets/hero.webp";
 import "./About.css";
 
 const QUICK_INFO = [
