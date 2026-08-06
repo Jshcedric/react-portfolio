@@ -75,7 +75,7 @@
   gap: 0.5rem;
   padding: 1.25rem;
   border: 1px solid var(--border);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .contact-card:hover {
